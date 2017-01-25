@@ -28,9 +28,6 @@ function BasicCard(front, back) {
 			}
 		})
 	}
-	this.showAnswer = function() {
-		console.log(this.back);
-	}
 }
 
 function ClozeCard(text1, text2, cloze) {
@@ -48,8 +45,9 @@ function ClozeCard(text1, text2, cloze) {
 				console.log("Correct!");
 				score++;
 			} else {
-				clozeCards[count].showAnswer();
+				console.log("Incorrect!");
 			}
+			clozeCards[count].showAnswer();
 			console.log("******************");
 			count++;
 			if (count < clozeCards.length) {
@@ -60,7 +58,7 @@ function ClozeCard(text1, text2, cloze) {
 		})
 	}
 	this.showAnswer = function() {
-		console.log("Incorrect.\r\n" + this.text1 + this.cloze + this.text2);
+		console.log(this.text1 + this.cloze + this.text2);
 	}
 }
 
